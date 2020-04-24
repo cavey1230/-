@@ -1,12 +1,15 @@
 import React from "react";
+import {pauseInterVal} from "./IntervalPad";
 
 const BreakPad = (props) => {
 
     const ADD = () => {
-        props.breakAction.add()
+        props.breakAction.add();
+        pauseInterVal();
     }
     const SUB = () => {
-        props.breakAction.sub()
+        props.breakAction.sub();
+        pauseInterVal();
     }
     return (
         <div>

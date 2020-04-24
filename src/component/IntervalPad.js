@@ -1,13 +1,17 @@
 import React from "react";
 
+let intervalID = 0;
+
+const pauseInterVal = () => {
+    clearInterval(intervalID);
+}
+
 const IntervalPad = (props) => {
     let SessionMinute = props.session - 1;
     let BreakMinute = props.break - 1;
-    let BetweenMinute = SessionMinute;
+    let BetweenMinute = props.interval.minute;
     let CountPD = "Close";
-    let second = 60;
-    let intervalID = 0;
-
+    let second = props.interval.second;
 
     const intervalFC = () => {
         second -= 1;
@@ -35,14 +39,10 @@ const IntervalPad = (props) => {
 
     const startInterVal = () => {
         clearInterval(intervalID);
-        BetweenMinute = SessionMinute
-        CountPD = "Close";
-        second = 60;
+        props.interValAction(BetweenMinute, second);
         intervalID = setInterval(intervalFC, 1000);
     }
-    const pauseInterVal = () => {
-        clearInterval(intervalID);
-    }
+
     const RestInterVal = () => {
         clearInterval(intervalID);
         BetweenMinute = SessionMinute;
@@ -67,4 +67,4 @@ const IntervalPad = (props) => {
         </div>
     )
 }
-export {IntervalPad}
+export {IntervalPad,pauseInterVal}

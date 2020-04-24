@@ -1,13 +1,16 @@
 import React from "react";
+import {pauseInterVal} from "./IntervalPad";
 
 const SessionPad = (props) => {
 
     const ADD = () => {
         props.sessionAction.add()
+        pauseInterVal();
         props.interValAction(props.session, 60);
     }
     const SUB = () => {
         props.sessionAction.sub()
+        pauseInterVal();
         props.interValAction(props.session - 2, 60);
     }
     return (
