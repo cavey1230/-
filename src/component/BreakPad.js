@@ -12,13 +12,13 @@ const BreakPad = (props) => {
         pauseInterVal();
     }
     return (
-        <div>
+        <div id="break_pad">
             <p id="break-label">Break Length</p>
             <div className="button_group">
                 <button id="break-decrement" onClick={() => SUB()}>
                     <i className="iconfont icon-kuaitui"></i>
                 </button>
-                <p>{props.break}</p>
+                <p id="break-length">{props.break}</p>
                 <button id="break-increment" onClick={() => ADD()}>
                     <i className="iconfont icon-kuaijin"></i>
                 </button>

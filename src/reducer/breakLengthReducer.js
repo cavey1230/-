@@ -3,6 +3,9 @@ const  breakLengthReducer=(state=5,action)=>{
         case "BADD":
             return state+1
         case "BSUB":
+            if(state-1 < 0){
+                return 0
+            }
             return state-1
         default:
             return state

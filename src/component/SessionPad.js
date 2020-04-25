@@ -12,15 +12,16 @@ const SessionPad = (props) => {
         props.sessionAction.sub()
         pauseInterVal();
         props.interValAction(props.session - 2, 60);
+        props.session <= 1 ? props.interValAction(0, 0) : props.interValAction(props.session - 2, 60);
     }
     return (
-        <div>
-            <p id="break-label">Session Length</p>
+        <div id="session_pad">
+            <p id="session-label">Session Length</p>
             <div className="button_group">
                 <button id="session-decrement" onClick={() => SUB()}>
                     <i className="iconfont icon-kuaitui"></i>
                 </button>
-                <p>{props.session}</p>
+                <p id="session-length">{props.session}</p>
                 <button id="session-increment" onClick={() => ADD()}>
                     <i className="iconfont icon-kuaijin"></i>
                 </button>

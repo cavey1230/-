@@ -10,7 +10,7 @@ const intervalReducer = (state = {minute: 24, second: 60}, action) => {
     }
 }
 
-const saveTimes = (mm, ss) => {
+const saveTimes = (mm, ss, pd) => {
     return {
         type: 'SAVE_AND_CHANGE',
         minute: mm,

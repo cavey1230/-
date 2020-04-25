@@ -8,12 +8,14 @@ import {IntervalPad} from "./component/IntervalPad";
 class App extends Component {
     render() {
         return (
-            <div>
-                <SessionPad session={this.props.session}
-                            sessionAction={this.props.sessionAction}
-                            interValAction={this.props.interValAction}
-                />
-                <BreakPad break={this.props.break} breakAction={this.props.breakAction}/>
+            <div id="center_pad">
+                <div id="action_pad">
+                    <SessionPad session={this.props.session}
+                                sessionAction={this.props.sessionAction}
+                                interValAction={this.props.interValAction}
+                    />
+                    <BreakPad break={this.props.break} breakAction={this.props.breakAction}/>
+                </div>
                 <IntervalPad
                     session={this.props.session}
                     break={this.props.break}
